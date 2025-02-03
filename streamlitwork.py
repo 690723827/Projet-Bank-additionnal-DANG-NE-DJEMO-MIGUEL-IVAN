@@ -9,7 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import RandomForestClassifier
 import joblib 
 from sklearn.metrics import r2_score
-df=pd.read_csv('bank_additioal_full.csv')
+df=pd.read_csv('bank-additioal-full.csv')
 st.dataframe(df.head())
 st.sidebar.title("sommaire")
 pages = ["Contexte du projet","Exploration des données","analyse des données","Modélisation"]
@@ -39,4 +39,3 @@ elif page == page[3]
     x= df_encoder.drop("y",axis=1)
     x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=123)
     scaler=StandardScaler()
-    
