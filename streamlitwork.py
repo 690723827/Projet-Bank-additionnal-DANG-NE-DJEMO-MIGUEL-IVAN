@@ -14,16 +14,16 @@ st.dataframe(df.head())
 st.sidebar.title("sommaire")
 pages = ["Contexte du projet","Exploration des données","analyse des données","Modélisation"]
 page= st.sidebar.radio("Aller vers la page",pages)
-if page == page[0]
+if page == page[0]:
     st.write("### A propos")
     st.write("ce dataset provient d'une campagne de marketing direct menée par une institution bancaire portugaise,principalement par le biais d'appel téléphonique.et à pour objectif de prédire si un client souscrira à un dépot à terme(variable cible y='oui' ou 'non'")
     st.write("cette visualisation à été realiser par DANG-NE DJEMO MIGUEL IVAN")
- elif page == page[1]
+ elif page == page[1]:
     st.write("exploration des données")
     st.dataframe(df.head())
     st.write("dimension du dataframe:")
     st.write(df.shape)
-elif page == page[2]
+elif page == page[2]:
     st.write("### Analyse des données")
     fig=plt.figure(figsize=(8,5))
     sns.heatmap(corr,annot=True, cmap="coolwarm")
@@ -32,7 +32,7 @@ elif page == page[2]
     g=df.groupby(["y","marital"])["marital"].count().transform(lambda x:x/x.sum())
     g= g.unstack(level=0)
     fig=g.plot(kind="bar",figsize=(9,8),use_index=True,)
-elif page == page[3]
+elif page == page[3]:
     st.write("### Modélisation")
     df_encoder= pd.read_csv("bank_additional_encoded.csv")
     y= df_encoder.prep("y")
