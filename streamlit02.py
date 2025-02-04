@@ -339,8 +339,8 @@ no_class_downsampled = resample(no_class,
 balanced_data = pd.concat([no_class_downsampled, yes_class])  
 
     #  Séparer les caractéristiques et la cible  
-     X_balanced = balanced_data.drop('y', axis=1)  
-     y_balanced = balanced_data['y']  
+X_balanced = balanced_data.drop('y', axis=1)  
+y_balanced = balanced_data['y']  
 elif st.session_state.page_selection == 'prediction':
         # ... (votre code pour la page de prédiction)
         # Page Prédiction  
