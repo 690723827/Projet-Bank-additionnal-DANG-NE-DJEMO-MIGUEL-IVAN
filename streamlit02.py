@@ -326,8 +326,8 @@ elif st.session_state.page_selection == 'apprentissage_automatique':
     # Séparez les classes
 
 
-    no_class = data[data['y'] == 0]  # Classe majoritaire  
-    yes_class = data[data['y'] == 1]  # Classe minoritaire  
+no_class = data[data['y'] == 0]  # Classe majoritaire  
+yes_class = data[data['y'] == 1]  # Classe minoritaire  
 
     # Sous-échantillonnage de la classe majoritaire  
     no_class_downsampled = resample(no_class,  
