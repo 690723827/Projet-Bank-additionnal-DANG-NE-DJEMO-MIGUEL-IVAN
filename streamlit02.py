@@ -330,7 +330,7 @@ no_class = data[data['y'] == 0]  # Classe majoritaire
 yes_class = data[data['y'] == 1]  # Classe minoritaire  
 
     # Sous-échantillonnage de la classe majoritaire  
-    no_class_downsampled = resample(no_class,  
+no_class_downsampled = resample(no_class,  
                                  replace=False,  # Ne pas remplacer  
                                  n_samples=len(yes_class),  # Pour équilibrer  
                                  random_state=42)  # Pour la reproductibilité  
