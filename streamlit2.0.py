@@ -78,7 +78,7 @@ elif page == pages[3]:
     model_choisi = st.selectbox(label = "Modèle", options = ['Random Forest'])
     
     def train_model(model_choisi) : 
-    model_choisi == 'Regression Linéaire'
+    model_choisi == 'Random Forest'
            
     r2 = r2_score(y_test, y_pred)
     return r2
