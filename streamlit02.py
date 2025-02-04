@@ -177,7 +177,7 @@ except FileNotFoundError:
     st.stop()
 
 # Page principale
-if st.session_state.page_selection == 'a_propos':
+     if st.session_state.page_selection == 'a_propos':
     # Page À Propos
     st.title("️ À Propos")
     st.markdown("""
@@ -196,7 +196,7 @@ if st.session_state.page_selection == 'a_propos':
 
         ✉️ Contact : dangneivanmiguel@gmail.com
     """)
-elif st.session_state.page_selection == 'conclusion':
+ elif st.session_state.page_selection == 'conclusion':
      # Page À Propos
     st.title("️ conclusion")
     st.markdown("""
@@ -217,8 +217,7 @@ elif st.session_state.page_selection == 'jeu_de_donnees':
     # Afficher les statistiques descriptives
     if st.checkbox("Afficher les statistiques descriptives"):
         st.write(df.describe())
-
-elif st.session_state.page_selection == 'analyse_exploratoire':
+ elif st.session_state.page_selection == 'analyse_exploratoire':
     import seaborn as sns  # Importation de seaborn
     import matplotlib.pyplot as plt  # Importation de matplotlib.pyplot
     import altair as alt
@@ -269,8 +268,7 @@ elif st.session_state.page_selection == 'analyse_exploratoire':
         .interactive()
     )
     st.altair_chart(age_job_chart, use_container_width=True)
-
-elif st.session_state.page_selection == 'apprentissage_automatique':
+ elif st.session_state.page_selection == 'apprentissage_automatique':
     from sklearn.model_selection import train_test_split
     from sklearn.ensemble import RandomForestClassifier
     from sklearn.metrics import classification_report, confusion_matrix
@@ -341,8 +339,7 @@ no_class_downsampled = resample(no_class,
     #  Séparer les caractéristiques et la cible  
     X_balanced = balanced_data.drop('y', axis=1)  
     y_balanced = balanced_data['y'] 
-
-elif st.session_state.page_selection == 'prediction':
+ elif st.session_state.page_selection == 'prediction':
         # ... (votre code pour la page de prédiction)
         # Page Prédiction  
     st.title("🔮 Prédiction")  
