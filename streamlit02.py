@@ -330,17 +330,17 @@ no_class = data[data['y'] == 0]  # Classe majoritaire
 yes_class = data[data['y'] == 1]  # Classe minoritaire  
 
     # Sous-échantillonnage de la classe majoritaire  
-    no_class_downsampled = resample(no_class,  
+no_class_downsampled = resample(no_class,  
                                  replace=False,  # Ne pas remplacer  
                                  n_samples=len(yes_class),  # Pour équilibrer  
                                  random_state=42)  # Pour la reproductibilité  
 
     # Combiner la classe minoritaire avec la classe majoritaire sous-échantillonnée  
-    balanced_data = pd.concat([no_class_downsampled, yes_class])  
+balanced_data = pd.concat([no_class_downsampled, yes_class])  
 
     #  Séparer les caractéristiques et la cible  
-    X_balanced = balanced_data.drop('y', axis=1)  
-    y_balanced = balanced_data['y']  
+X_balanced = balanced_data.drop('y', axis=1)  
+y_balanced = balanced_data['y']  
 elif st.session_state.page_selection == 'prediction':
         # ... (votre code pour la page de prédiction)
         # Page Prédiction  
@@ -348,9 +348,9 @@ elif st.session_state.page_selection == 'prediction':
     from sklearn.ensemble import RandomForestClassifier  
 
         # Formulaire pour saisir les caractéristiques  
-    age = st.number_input("Âge du client", min_value=18, max_value=120, value=30)  
-    duration = st.number_input("Durée du contact (seconds)", min_value=0, value=60)  
-    campaign = st.number_input("Nombre de contacts lors de la campagne", min_value=1, value=1)  
+age = st.number_input("Âge du client", min_value=18, max_value=120, value=30)  
+duration = st.number_input("Durée du contact (seconds)", min_value=0, value=60)  
+campaign = st.number_input("Nombre de contacts lors de la campagne", min_value=1, value=1)  
     
     if st.button("Prédire"): 
         from sklearn.model_selection import train_test_split  
