@@ -19,7 +19,7 @@ from sklearn.metrics import accuracy_score
 import streamlit as st  
 
 # Initialiser l'attribut si ce n'est pas déjà fait  
-if 'page_selection' not in st.session_state:  
+ if 'page_selection' not in st.session_state:  
     st.session_state.page_selection = 'valeur_par_defaut'  # Remplacez par la valeur souhaitée
 # Configuration de l'image de fond
 def add_bg_from_local(image_file):
@@ -56,7 +56,7 @@ except Exception as e:
 # -------------------------
 # Section interactive des graphiques
 
-if st.session_state.page_selection == 'jeu_de_donnees':
+ if st.session_state.page_selection == 'jeu_de_donnees':
     st.title("📊 Exploration Interactive des Données")
     
     # Contrôles interactifs
@@ -131,8 +131,7 @@ alt.themes.enable("dark")
 
 # -------------------------
 # Barre latérale
-
-if 'page_selection' not in st.session_state:
+ if 'page_selection' not in st.session_state:
     st.session_state.page_selection = 'a_propos'  # Page par défaut
 
 # Fonction pour mettre à jour page_selection
@@ -204,8 +203,7 @@ except FileNotFoundError:
         et la fiabilité du modèle de prédiction. En combinant explorations, prétraitements adéquats, et évaluations rigoureuses,
          on peut développer un modèle robuste qui est mieux équipé pour prédire les comportements des clients envers la souscription à un produit.
     """)
-
-elif st.session_state.page_selection == 'jeu_de_donnees':
+ elif st.session_state.page_selection == 'jeu_de_donnees':
     # Page Jeu de Données
     st.title(" Jeu de Données")
 
