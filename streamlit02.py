@@ -326,8 +326,8 @@ elif st.session_state.page_selection == 'apprentissage_automatique':
     # Séparez les classes
 
 
-no_class = data[data['y'] == 0]  # Classe majoritaire  
-yes_class = data[data['y'] == 1]  # Classe minoritaire  
+    no_class = data[data['y'] == 0]  # Classe majoritaire  
+    yes_class = data[data['y'] == 1]  # Classe minoritaire  
 
     # Sous-échantillonnage de la classe majoritaire  
 no_class_downsampled = resample(no_class,  
@@ -336,11 +336,11 @@ no_class_downsampled = resample(no_class,
                                  random_state=42)  # Pour la reproductibilité  
 
     # Combiner la classe minoritaire avec la classe majoritaire sous-échantillonnée  
-balanced_data = pd.concat([no_class_downsampled, yes_class])  
+    balanced_data = pd.concat([no_class_downsampled, yes_class])  
 
     #  Séparer les caractéristiques et la cible  
-X_balanced = balanced_data.drop('y', axis=1)  
-y_balanced = balanced_data['y'] 
+    X_balanced = balanced_data.drop('y', axis=1)  
+    y_balanced = balanced_data['y'] 
 
 elif st.session_state.page_selection == 'prediction':
         # ... (votre code pour la page de prédiction)
